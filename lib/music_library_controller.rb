@@ -74,6 +74,21 @@ class MusicLibraryController
   end
 
   def list_songs_by_genre
+    puts "Please enter a genre:"
+    input = gets.strip
+    genre = Genre.find_by_name(input)
+    list = []
+    count = 1
+    if genre == nil
+      return
+    else
+      list =  genre.songs.sort {|a, b| a.name <=> b.name}.uniq
+    end
+    list.each do |song|
+      words = [song.name, song.artist.name].join(" - ")
+      puts "#{count}. #{words}"
+      count += 1
+    end
   end
 
   def play_song
