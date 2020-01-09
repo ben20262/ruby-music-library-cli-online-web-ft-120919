@@ -30,7 +30,6 @@ class MusicLibraryController
   def list_songs
     list = Song.all.sort {|a, b| a.name <=> b.name}.uniq
     count = 1
-    binding.pry
     list.each do |song|
       words = [song.artist.name, song.name, song.genre.name].join(" - ")
       puts "#{count}. #{words}"
