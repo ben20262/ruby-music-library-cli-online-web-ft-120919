@@ -95,7 +95,7 @@ class MusicLibraryController
     puts "Which song number would you like to play?"
     index = gets.strip.to_i - 1
     list = Song.all.sort {|a, b| a.name <=> b.name}.uniq
-    if index <= list.size - 1
+    if index <= list.size - 1 && index > 0
       song = list[index].name
       artist = list[index].artist.name
       puts "Playing #{song} by #{artist}"
