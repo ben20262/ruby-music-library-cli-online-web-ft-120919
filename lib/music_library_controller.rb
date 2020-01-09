@@ -85,7 +85,7 @@ class MusicLibraryController
       list =  genre.songs.sort {|a, b| a.name <=> b.name}.uniq
     end
     list.each do |song|
-      words = [song.name, song.artist.name].join(" - ")
+      words = [song.artist.name, song.name].join(" - ")
       puts "#{count}. #{words}"
       count += 1
     end
