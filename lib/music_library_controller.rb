@@ -98,7 +98,7 @@ class MusicLibraryController
     if index <= list.size - 1
       song = list[index].name
       artist = list[index].artist.name
-      puts "Playing #{song} by #{artist}."
+      puts "Playing #{song} by #{artist}"
     else
       return
     end
