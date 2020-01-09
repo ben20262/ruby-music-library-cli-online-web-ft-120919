@@ -28,7 +28,7 @@ class MusicLibraryController
   end
 
   def list_songs
-    list = Song.all.sort {|a, b| a.name <=> b.name}
+    list = Song.all.sort {|a, b| a.name <=> b.name}.uniq
     count = 1
     binding.pry
     list.each do |song|
