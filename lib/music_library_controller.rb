@@ -64,7 +64,7 @@ class MusicLibraryController
     else
       return artist.songs.sort {|a, b| a.name <=> b.name}.uniq
     end
-    
+
   end
 
   def list_songs_by_genre
@@ -73,13 +73,3 @@ class MusicLibraryController
   def play_song
   end
 end
-
-
-
-
-
-
-
-
-
-
