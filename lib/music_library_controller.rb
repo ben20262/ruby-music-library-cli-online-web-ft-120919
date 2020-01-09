@@ -60,7 +60,7 @@ class MusicLibraryController
     input = gets.strip
     artist = Artist.find_by_name(input)
     if artist == nil
-      list_songs_by_artist
+      return
     else
       return artist.songs.sort {|a, b| a.name <=> b.name}.uniq
     end
