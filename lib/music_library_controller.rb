@@ -59,12 +59,18 @@ class MusicLibraryController
     puts "Please enter the name of an artist:"
     input = gets.strip
     artist = Artist.find_by_name(input)
+    list = []
+    count = 1
     if artist == nil
       return
     else
-      puts artist.songs.sort {|a, b| a.name <=> b.name}.uniq
+      list =  artist.songs.sort {|a, b| a.name <=> b.name}.uniq
     end
-
+    list.each do |song|
+      words = [song.name, song.genre.name].join(" - ")
+      puts "#{count}. #{words}"
+      count += 1
+    end
   end
 
   def list_songs_by_genre
