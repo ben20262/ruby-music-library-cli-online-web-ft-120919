@@ -56,6 +56,15 @@ class MusicLibraryController
   end
 
   def list_songs_by_artist
+    puts "Please enter the name of an artist:"
+    input = gets.strip
+    artist = Artist.find_by_name(input)
+    if artist == nil
+      list_songs_by_artist
+    else
+      return artist.songs.sort {|a, b| a.name <=> b.name}.uniq
+    end
+    
   end
 
   def list_songs_by_genre
@@ -64,3 +73,13 @@ class MusicLibraryController
   def play_song
   end
 end
+
+
+
+
+
+
+
+
+
+
