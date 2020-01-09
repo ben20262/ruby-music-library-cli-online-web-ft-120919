@@ -62,7 +62,7 @@ class MusicLibraryController
     if artist == nil
       return
     else
-      return artist.songs.sort {|a, b| a.name <=> b.name}.uniq
+      puts artist.songs.sort {|a, b| a.name <=> b.name}.uniq
     end
 
   end
