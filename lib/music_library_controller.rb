@@ -27,7 +27,7 @@ class MusicLibraryController
   end
 
   def list_songs
-    list = Song.all.sort {|song| song.name}
+    list = Song.all.sort_by {|song| song.name.first}
     count = 1
     list.each do |song|
       words = [song.artist.name, song.name, song.genre.name].join(" - ")
